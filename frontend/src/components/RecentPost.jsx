@@ -1,6 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const RecentPost = () => {
+const navigate= useNavigate()
+    const handleNavigate=()=>{
+        navigate('/single-post/5454545')
+    }
   return (
     <div>
       <div className="container">
@@ -19,7 +24,7 @@ const RecentPost = () => {
                 <p className="card-text">
                     This is a sample blog post. This is a sample blog post. This is a sample blog
                 </p>
-                <a href="#" className="btn btn-primary">
+                <a href="#" className="btn btn-primary" onClick={handleNavigate}>
                   Click to read
                 </a>
               </div>
