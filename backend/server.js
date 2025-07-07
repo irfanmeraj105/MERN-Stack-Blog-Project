@@ -12,6 +12,7 @@ const getAllBlogsRoutes = require("./routes/getAllBlogsRoutes");
 const updateBlogRoutes = require("./routes/updateBlogRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const commentsRoutes = require("./routes/commentsRoutes");
+const publicRoutes = require("./routes/publicRoutes");
 const app = express();
 const PORT = process.env.PORT || 5001;
 
@@ -33,6 +34,7 @@ app.use("/", getAllBlogsRoutes);
 app.use("/blog", updateBlogRoutes);
 app.use('/dashboard', dashboardRoutes)
 app.use("/comments", commentsRoutes)
+app.use('/public', publicRoutes)
 
 // server listening
 app.listen(PORT, () => {

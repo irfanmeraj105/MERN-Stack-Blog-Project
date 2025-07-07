@@ -11,6 +11,10 @@ const blogSchema = new mongoose.Schema(
     image: {
       type: String,
     },
+    comments:[{
+      type:mongoose.Schema.Types.ObjectId,
+      ref: 'Comments',
+    }]
   },
   { timestamps: true }
 );
