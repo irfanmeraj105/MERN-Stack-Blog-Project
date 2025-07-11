@@ -1,8 +1,10 @@
 const blogPost = require("../models/blogModel");
+const Comments = require("../models/comments");
 const registerModel = require("../models/registerModel");
 const fs = require("fs");
 const path = require("path");
 
+// getting all the posts 
 const getAllPosts = async (req, res) => {
   try {
     const posts = await blogPost.find();
@@ -61,5 +63,21 @@ const deleteUsers = async (req, res) => {
   }
 };
 
+// getting all the comments 
+const getAllComments = async (req, res) => {
+  try {
+    const comments = await Comments.find();
+
+    if (!comments) {
+      return res.status(404).json({ message: "No data found" });
+    }
+
+    res.status(200).json({ success: true, comments });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
 // export
-module.exports = { getAllPosts, getAllUsers, deleteUsers };
+module.exports = { getAllPosts, getAllUsers, deleteUsers, getAllComments };

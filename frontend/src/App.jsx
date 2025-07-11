@@ -11,10 +11,12 @@ import Dashboard from "./pages/Admin/Dashboard";
 import AddPost from "./pages/Admin/AddPost";
 import User from "./pages/Admin/User";
 import AllPost from "./pages/Admin/AllPost";
+import { Toaster } from "react-hot-toast";
 const App = () => {
   return (
     <>
       <BrowserRouter>
+      <Toaster />
         <Routes>
           {/* user layout routes  */}
           <Route path="/" element={<UserLayout />}>

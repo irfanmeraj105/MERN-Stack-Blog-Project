@@ -36,7 +36,7 @@ body {
 }
 
 .post-image {
-  width: 100% ;
+  width: 100%;
   height: 500px;
   border-radius: 10px;
   object-fit: cover;
@@ -45,14 +45,14 @@ body {
 .profile-container {
   max-width: 400px;
   margin: 50px auto;
-  background-color: #1A202C;
+  background-color: #1a202c;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
 }
 
 .profile-title {
-  color: #E2E8F0;
+  color: #e2e8f0;
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
@@ -80,22 +80,22 @@ body {
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #4A5568;
+  border: 2px solid #4a5568;
 }
 
 .profile-placeholder {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: #2D3748;
+  background-color: #2d3748;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #4A5568;
+  border: 2px solid #4a5568;
 }
 
 .profile-icon {
-  color: #A0AEC0;
+  color: #a0aec0;
   font-size: 40px;
 }
 
@@ -103,8 +103,8 @@ body {
   position: absolute;
   bottom: 5px;
   right: 5px;
-  background-color: #4A5568;
-  color: #E2E8F0;
+  background-color: #4a5568;
+  color: #e2e8f0;
   padding: 5px;
   border-radius: 50%;
   font-size: 14px;
@@ -124,28 +124,28 @@ body {
   position: absolute;
   top: 10px;
   left: 10px;
-  color: #A0AEC0;
+  color: #a0aec0;
 }
 
 .profile-input {
   width: 100%;
   padding: 10px 10px 10px 40px;
-  background-color: #2D3748;
-  color: #E2E8F0;
+  background-color: #2d3748;
+  color: #e2e8f0;
   border: none;
   border-radius: 5px;
   outline: none;
 }
 
 .profile-input::placeholder {
-  color: #A0AEC0;
+  color: #a0aec0;
 }
 
 .profile-button {
   width: 100%;
   padding: 10px;
-  background-color: #3182CE;
-  color: #E2E8F0;
+  background-color: #3182ce;
+  color: #e2e8f0;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -154,5 +154,5 @@ body {
 }
 
 .profile-button:hover {
-  background-color: #2B6CB0;
+  background-color: #2b6cb0;
 }

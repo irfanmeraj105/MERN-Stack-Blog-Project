@@ -4,6 +4,7 @@ const {
   getAllPosts,
   getAllUsers,
   deleteUsers,
+  getAllComments,
 } = require("../controllers/dashboardControllers");
 const dashboardRoutes = express.Router();
 
@@ -11,6 +12,7 @@ const dashboardRoutes = express.Router();
 dashboardRoutes.get("/", isAdmin, getAllPosts);
 dashboardRoutes.get("/users", isAdmin, getAllUsers);
 dashboardRoutes.delete("/delete/:id", isAdmin, deleteUsers);
+dashboardRoutes.get('/all-comments',isAdmin,getAllComments)
 
 // export
 module.exports = dashboardRoutes;

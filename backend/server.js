@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 dotenv.config();
+const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const connectDB = require("./utils/db");
 const authRoutes = require("./routes/authRoutes");
@@ -16,9 +17,15 @@ const publicRoutes = require("./routes/publicRoutes");
 const app = express();
 const PORT = process.env.PORT || 5001;
 
+const corsOption = {
+  origin: true,
+  credentials: true,
+};
+
 // middlewares
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors(corsOption));
 app.use(express.static("public"));
 
 // connecting the mongodb
@@ -32,9 +39,9 @@ app.use("/blog", createBlogRoutes);
 app.use("/blog", deleteBlogRoutes);
 app.use("/", getAllBlogsRoutes);
 app.use("/blog", updateBlogRoutes);
-app.use('/dashboard', dashboardRoutes)
-app.use("/comments", commentsRoutes)
-app.use('/public', publicRoutes)
+app.use("/dashboard", dashboardRoutes);
+app.use("/comments", commentsRoutes);
+app.use("/public", publicRoutes);
 
 // server listening
 app.listen(PORT, () => {
