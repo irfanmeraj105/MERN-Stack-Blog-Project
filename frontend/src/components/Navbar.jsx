@@ -40,7 +40,6 @@ export default function Navbar() {
             </div>
             <ul className="dropdown-menu dropdown-menu-end dropdown-menu-dark">
               
-              {/* <li><span className='text-bold fs-4 dropdown-item'>{user && user.FullName}</span></li> */}
               {user.role == 'admin' ? <li><Link className="dropdown-item" to="/dashboard">Dashboard</Link></li> :"" }
               <li><Link className="dropdown-item" to={`/profile/${user._id}`}>Profile</Link></li>
               <li><a className="dropdown-item " onClick={handleLogout} style={{cursor:"pointer"}}>Sign Out</a></li>

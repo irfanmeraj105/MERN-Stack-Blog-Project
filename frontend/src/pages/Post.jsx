@@ -1,4 +1,4 @@
-import { baseUrl, get } from "../services/Endpoint";
+import { baseUrl, get, post } from "../services/Endpoint";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
@@ -13,7 +13,9 @@ const Post = () => {
       const response = await get(`/public/singlepost/${id}`);
       const data = response.data;
       setSinglePost(data);
-    } catch (error) {}
+    } catch (error) {
+console.error(error)
+    }
   };
 
   // useEffect Hook - For the ui update
@@ -29,7 +31,7 @@ const Post = () => {
             {singlePost && singlePost.title}
           </h1>
           <img
-            src={singlePost && `${baseUrl}/images/${singlePost.image}`}
+            src={singlePost && `/images/${singlePost.image}`}
             alt="blog-post"
             width={100}
             className="post-image"
@@ -61,7 +63,11 @@ const Post = () => {
           </form>
 
           <hr />
-          <h3 className="mt-5 mb-4">Comments</h3>
+          <h3 className="mt-5 ">Comments</h3>
+          <p className="mb-4">
+            Total Comments :{" "}
+            {singlePost && singlePost.comments ? singlePost.comments.length : 0}
+          </p>
           {singlePost &&
           singlePost.comments &&
           singlePost.comments.length > 0 ? (
@@ -72,7 +78,7 @@ const Post = () => {
                   key={commit._id}
                 >
                   <img
-                    src={`${baseUrl}/images/${commit.userId.profile}`}
+                    src={`/images/${commit.userId.profile}`}
                     className="rounded-circle me-3"
                     style={{
                       width: "50px",
